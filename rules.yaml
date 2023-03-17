@@ -260,4 +260,4 @@ config:
     # - DOMAIN-SUFFIX,sec.intl.miui.com,REJECT
     # - DOMAIN,api.sec.miui.com,REJECT
     # - DOMAIN,staging.sec.miui.com,REJECT
-    # - DOMAIN,a0.app.xiaomi.com,REJECT
+    # - DOMAIN,a0.app.xiaomi.com,REJECT 
