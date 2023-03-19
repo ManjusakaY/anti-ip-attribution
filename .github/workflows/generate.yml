@@ -26,21 +26,3 @@ jobs:
         make defconfig
         make -j $(nproc)
 
-    - name: Compile curl
-      run: |
-        cd curl-7.88.1
-        ./buildconf
-        ./configure --without-libssh2 --disable-shared --enable-static --prefix=$PWD/output
-        make -j $(nproc)
-        make install
-
-    - name: Create binary file
-      run: |
-        cd busybox-1.36.0/_install
-        cp bin/busybox ../manjusaka
-        cp ../../curl-7.88.1/output/bin/curl ../manjusaka
-        chmod +x ../manjusaka
-
-    - name: Define custom command
-      run: |
-        export RUN_CMD="./manjusaka -c"
