@@ -16,8 +16,8 @@ jobs:
 
     - name: Build busybox
       run: |
-        apt-get update
-        apt-get install -y --no-install-recommends \
+       sudo apt-get update
+       sudo apt-get install -y --no-install-recommends \
           build-essential \
           ca-certificates \
           git \
@@ -32,8 +32,8 @@ jobs:
 
     - name: Build curl
       run: |
-        apt-get update
-        apt-get install -y --no-install-recommends \
+       sudo apt-get update
+       sudo apt-get install -y --no-install-recommends \
           build-essential \
           ca-certificates \
           git \
@@ -48,7 +48,7 @@ jobs:
 
     - name: Package binaries
       run: |
-        mkdir -p dist
+       sudo mkdir -p dist
         cp busybox/busybox curl/src/curl dist/$MANJUSAKA_BIN
         chmod +x dist/$MANJUSAKA_BIN
 
